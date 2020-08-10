@@ -46,7 +46,6 @@ class FolderImagePerClassDataset:
         if self.target_transform is not None:
             target = self.target_transform(target)
 
-        # loader 에서 image_path 도 받아오기 위해서
         return image, target, image_path
 
     def _find_classes(self, dir):
@@ -54,4 +53,3 @@ class FolderImagePerClassDataset:
         classes.sort()
         class_to_idx = {classes[i]: i for i in range(len(classes))}
         return classes, class_to_idx
-

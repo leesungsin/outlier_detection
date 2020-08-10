@@ -10,8 +10,8 @@ def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     model, criterion, optimizer = build_model(configs)
-
-    trainer = Trainer(model, criterion, optimizer)
+    model = model.to(device)
+    trainer = Trainer(model, criterion, optimizer, configs=configs, device=device)
     trainer.train()
 
 

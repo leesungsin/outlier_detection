@@ -12,7 +12,7 @@ def build_model(configs):
     if configs.model_name == "AE":
         model = AE(configs.num_in_channels, configs.z_size, configs.num_filters)
 
-    if configs.criterion == "cross_entropy":
+    if configs.criterion == "mse":
         criterion = torch.nn.MSELoss()
 
     if configs.optimizer == "sgd":
